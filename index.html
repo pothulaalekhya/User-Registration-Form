@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Course Registration</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts for a modern look (e.g., Poppins) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1 class="form-title">
+        <span class="icon">&#x1F4DA;</span> Course Registration
+      </h1>
+
+      <div class="card active" id="personal-details-card">
+        <h2 class="card-header">
+          <span class="header-icon">&#x1F464;</span> Personal Details
+        </h2>
+        <form id="personal-details-form">
+          <div class="input-grid">
+            <div class="form-group">
+              <label for="first-name"
+                >First Name<span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="first-name"
+                placeholder="E.g., Alekhya"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="surname"
+                >Surname<span class="required">*</span></label
+              >
+              <input type="text" id="surname" placeholder="E.g., P" required />
+            </div>
+          </div>
+
+          <div class="input-grid">
+            <div class="form-group">
+              <label for="mobile-number"
+                >Mobile Number<span class="required">*</span></label
+              >
+              <input
+                type="tel"
+                id="mobile-number"
+                placeholder="E.g., 997-897-4987"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                title="Format: 123-456-7890"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email<span class="required">*</span></label>
+              <input
+                type="email"
+                id="email"
+                placeholder="E.g., alekhya@example.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="input-grid">
+            <div class="form-group">
+              <label for="password"
+                >Password<span class="required">*</span></label
+              >
+              <input
+                type="password"
+                id="password"
+                placeholder="Min 8 characters"
+                minlength="8"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="confirm-password"
+                >Confirm Password<span class="required">*</span></label
+              >
+              <input
+                type="password"
+                id="confirm-password"
+                placeholder="Re-enter password"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="input-grid">
+            <div class="form-group">
+              <label for="dob"
+                >Date of Birth<span class="required">*</span></label
+              >
+              <input type="date" id="dob" required />
+            </div>
+            <div class="form-group">
+              <label for="age">Age<span class="required">*</span></label>
+              <input
+                type="number"
+                id="age"
+                min="18"
+                max="100"
+                placeholder="18-100"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label>Gender<span class="required">*</span></label>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                required
+              />
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Female</label>
+              <input type="radio" id="others" name="gender" value="others" />
+              <label for="others">Others</label>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="country"
+              >Select Country<span class="required">*</span></label
+            >
+            <select id="country" required>
+              <option value="">-- Select --</option>
+              <option value="usa">United States</option>
+              <option value="canada">Canada</option>
+              <option value="uk">United Kingdom</option>
+              <option value="india">India</option>
+              <option value="australia">Australia</option>
+              <!-- Add more countries -->
+            </select>
+          </div>
+
+          <div class="form-group full-width file-upload-group">
+            <label for="upload-picture">Upload Profile Picture</label>
+            <input type="file" id="upload-picture" accept="image/*" />
+            <span class="file-name">No file chosen</span>
+          </div>
+          <div class="navigation-buttons">
+            <button
+              type="button"
+              class="next-button"
+              data-target="course-details-card"
+            >
+              Next: Course Details <span class="nav-icon">&rarr;</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card" id="course-details-card">
+        <h2 class="card-header">
+          <span class="header-icon">&#x1F4BB;</span> Course Details
+        </h2>
+        <form id="course-details-form">
+          <div class="form-group full-width">
+            <label for="select-course"
+              >Select Course<span class="required">*</span></label
+            >
+            <select id="select-course" required>
+              <option value="">-- Select --</option>
+              <option value="web-dev">Full Stack Web Development</option>
+              <option value="data-science">
+                Data Science & Machine Learning
+              </option>
+              <option value="cyber-security">Cyber Security Essentials</option>
+              <option value="devops">DevOps Engineering</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label>Delivery Mode<span class="required">*</span></label>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="online"
+                name="delivery-mode"
+                value="online"
+                required
+              />
+              <label for="online">Online</label>
+              <input
+                type="radio"
+                id="offline"
+                name="delivery-mode"
+                value="offline"
+              />
+              <label for="offline">Offline (In-person)</label>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="institute-name">Institute Name</label>
+            <input
+              type="text"
+              id="institute-name"
+              value="TAP ACADEMY"
+              readonly
+            />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="comments">Additional Comments/Questions</label>
+            <textarea
+              id="comments"
+              rows="5"
+              placeholder="Any specific requirements or questions for us?"
+            ></textarea>
+          </div>
+
+          <div class="navigation-buttons">
+            <button
+              type="button"
+              class="prev-button"
+              data-target="personal-details-card"
+            >
+              <span class="nav-icon">&larr;</span> Previous
+            </button>
+            <button type="submit" class="submit-button">
+              Submit Registration <span class="nav-icon">&#x2713;</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="button-group full-form-buttons">
+        <button type="button" class="clear-button">Clear All Fields</button>
+      </div>
+    </div>
+  </body>
+</html>
